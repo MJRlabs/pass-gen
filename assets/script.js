@@ -1,6 +1,18 @@
 // Assignment code here
 
 
+const CharsAmountRange = document.getElementById ('CharsAmountRange')
+const CharsAmountNumber = document.getElementById ('CharsAmountNumber')
+
+CharsAmountNumber.addEventListener('input', syncCharsAmount)
+CharsAmountRange.addEventListener('input', syncCharsAmount)
+
+function syncCharsAmount(e) {
+  const value = e.target.value
+  CharsAmountNumber.value = value
+  CharsAmountRange.value = value
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -15,3 +27,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
