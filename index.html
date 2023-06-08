@@ -18,7 +18,7 @@
           <h2>Generate a Password</h2>
         </div>
         <div>
-          <form class="form">
+          <form id="passwordForm" class="form">
             <label for="CharsAmountNumber">Number of Characters: </label>
             <div>
               <input type="range" min="8" max="128" value="10" id="CharsAmountRange">
@@ -36,6 +36,10 @@
 
             <label for="includeSpecial">Include Special Characters?</label>
             <input type="checkbox" id="includeSpecial">
+            
+            <div class="card-footer">
+              <button type=submit id="generate" class="btn">Generate Password</button>
+            </div>
           </form>
         </div>
         <div class="card-body">
@@ -46,9 +50,7 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
-        <div class="card-footer">
-          <button type=submit id="generate" class="btn">Generate Password</button>
-        </div>
+       
       </div>
     </div>
     
