@@ -1,5 +1,4 @@
 // Assignment code here
-console.log('Mijan')
 
 const CharsAmountRange = document.getElementById('CharsAmountRange')
 const CharsAmountNumber = document.getElementById('CharsAmountNumber')
@@ -45,15 +44,19 @@ function syncCharsAmount(e) {
 //Adding eventlisteners for value and check boxes on form 
 form.addEventListener('submit', e => {
   e.preventDefault()
-
   const CharsAmount = CharsAmountNumber.value
   const includeLowercase = includeLowercaseElement.checked
   const includeUppercase = includeUppercaseElement.checked
   const includeNumeric = includeNumericElement.checked
   const includeSymbol = includeSpecialElement.checked
+
+  if (includeLowercase === false && includeUppercase === false && includeNumeric === false && includeSymbol === false) {
+    return alert("Please select the check box(es) to define your unique password.")
+  }
+
   const password = generatePassword(CharsAmount, includeLowercase, includeUppercase, includeNumeric, includeSymbol)
-    document.getElementById("password").value = password
-  
+  document.getElementById("password").value = password
+
 })
 
 //function to create the pool of charactors and then choose at random
